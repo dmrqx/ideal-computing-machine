@@ -1,0 +1,51 @@
+:root {
+  --max-container-width: 94rem;
+  --app-bar-height: 5.6rem;
+
+  /* border */
+  --default-border: 1px solid var(--grayscale-200);
+  --default-border-radius: 1rem;
+  --border-radius--pill: 50px;
+  --border-radius--small: 0.4rem;
+
+  /* box */
+  --box-border: var(--default-border);
+  --box-radius: var(--default-border-radius);
+
+  /* colors */
+  --black: #000;
+  --white: #fff;
+
+  --grayscale-200: #f2f2f2;
+  --grayscale-500: #aaa;
+  --grayscale-700: #4f4f4f;
+
+  --primary-color: #13c081;
+  --accent-color: #faa446;
+
+  --text-color: var(--grayscale-700);
+  --title-color: var(--black);
+
+  --link-color: var(--black);
+  --active-color: var(--primary-color);
+  --hover-color: var(--primary-color);
+
+  /* pill */
+  --pill-border: var(--default-border);
+  --pill-radius: var(--border-radius--pill);
+
+  /* shadows */
+  --default-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+
+  /* transitions */
+  --default-transition: all 0.2s ease-in-out;
+
+  /* typography */
+  --default-font-stack: 'Montserrat', system, sans-serif;
+  --font-weight--regular: 400;
+  --font-weight--semi-bold: 600;
+  --font-weight--bold: 700;
+  --rem-size: 10px;
+  --base-font-size: 1.4rem;
+  --base-line-height: 2rem;
+}

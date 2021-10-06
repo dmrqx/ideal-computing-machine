@@ -1,0 +1,32 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@font-face {
+  src: local(".SFNSText-Light"),
+    local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"),
+    local("Ubuntu Light"),
+    local("Segoe UI Light"),
+    local("Roboto-Light"),
+    local("DroidSans"),
+    local("Tahoma");
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+}
+
+html {
+  font-family: var(--default-font-stack);
+  font-size: var(--rem-size);
+  font-weight: var(--font-weight--regular);
+}
+
+body {
+  color: var(--text-color);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
