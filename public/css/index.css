@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--white);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: var(--anchor-underline, none);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
