@@ -1,5 +1,7 @@
 @import url('./variables.css');
 @import url('./typography.css');
+@import url('./brand-header.css');
+@import url('./user-avatar.css');
 
 *,
 *::after,
@@ -23,4 +25,10 @@ a {
 
 a:hover {
   color: var(--hover-color);
+}
+
+.max-width-container {
+  max-width: var(--max-container-width);
+  width: 100%;
+  padding: 0 2rem;
 }

@@ -1,0 +1,25 @@
+.brand-header {
+  position: fixed;
+  width: 100%;
+  height: var(--app-bar-height);
+  background: var(--white);
+  box-shadow: inset 0 -1px var(--grayscale-200);
+  color: var(--black);
+  font-weight: var(--font-weight--semi-bold);
+  text-transform: uppercase;
+}
+
+.brand-header > [class*="container"] {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.brand-header__logo {
+  display: block;
+  max-height: 3.6rem;
+  height: 100%;
+}
