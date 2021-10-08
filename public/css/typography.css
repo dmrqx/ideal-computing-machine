@@ -30,3 +30,45 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
+
+.body-text--dim {
+  color: var(--grayscale-500);
+}
+
+.decorated-title {
+  --line-color: var(--primary-color);
+
+  position: relative;
+  padding-top: 1.4rem;
+}
+
+.decorated-title::before {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 3rem;
+  height: 4px;
+  background-color: var(--line-color);
+  content: '';
+}
+
+.typography--page-title,
+.typography--section-title {
+  margin-bottom: 3rem;
+  color: var(--title-color);
+  font-size: 2.4rem;
+  font-weight: var(--font-weight--bold);
+  line-height: 3.2rem;
+}
+
+.typography--section-title {
+  --line-color: var(--accent-color) !important;
+}
+
+.typography--section-dialogue {
+  margin-bottom: 2rem;
+  color: var(--title-color);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight--semi-bold);
+  line-height: 2rem;
+}

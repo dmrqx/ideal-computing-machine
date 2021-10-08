@@ -7,19 +7,11 @@
 }
 
 .user-avatar__image {
-  width: var(--avatar-size);
-  height: var(--avatar-size);
-  background-color: var(--primary-color);
-  border-radius: 50%;
+  --diameter: var(--avatar-size);
 }
 
 .user-avatar__image::before {
-  display: block;
-  height: 100%;
-  content: attr(data-user-initials);
-  color: var(--white);
-  line-height: var(--avatar-size);
-  text-align: center;
+  --content: attr(data-user-initials);
 }
 
 .user-avatar__name {

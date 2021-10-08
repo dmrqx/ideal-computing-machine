@@ -1,6 +1,8 @@
 @import url('./variables.css');
+@import url('./shapes.css');
 @import url('./typography.css');
 @import url('./brand-header.css');
+@import url('./card.css');
 @import url('./user-avatar.css');
 
 *,
@@ -18,6 +20,18 @@ body {
   background-color: var(--white);
 }
 
+main,
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  position: relative;
+  top: var(--app-bar-height);
+  padding: 6rem 1rem 0;
+}
+
 a {
   color: var(--link-color);
   text-decoration: var(--anchor-underline, none);
@@ -28,7 +42,12 @@ a:hover {
 }
 
 .max-width-container {
+  align-self: center;
   max-width: var(--max-container-width);
   width: 100%;
   padding: 0 2rem;
+}
+
+.cta {
+  cursor: pointer;
 }
