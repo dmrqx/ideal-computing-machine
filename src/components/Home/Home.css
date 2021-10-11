@@ -1,0 +1,35 @@
+.home-info > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.home-info b {
+  display: block;
+  color: var(--black);
+  font-size: 1.6rem;
+  font-weight: var(--font-weight--bold);
+  line-height: 2.4rem;
+  white-space: nowrap;
+}
+
+.home-info__amenities ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-info__amenities li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+[data-amenity="subway"] .icon {
+  --background-color: var(--accent-color);
+  --content: 'M';
+
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.cta {
+  align-self: center;
+}
