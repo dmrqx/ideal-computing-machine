@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 
-import { Home, Services } from '../'
+import { Home, Services, SiteHeader, YukerAvatar } from '../'
 
 export default function App () {
   const [isServicesListVisible, setServicesListVisibility] = useState(false)
@@ -9,15 +9,9 @@ export default function App () {
 
   return (
     <>
-      <header className="brand-header">
-        <div className="max-width-container">
-          <img src="https://www.yuca.live/logo.png" className="brand-header__logo" alt="Yuca Apartamentos e Coliving SP" />
-          <aside className="user-avatar">
-            <span className="user-avatar__image circle" data-user-initials="BS"></span>
-            <span className="user-avatar__name">Bernardo</span>
-          </aside>
-        </div>
-      </header>
+      <SiteHeader>
+        <YukerAvatar />
+      </SiteHeader>
 
       <main>
         <div className="max-width-container">
