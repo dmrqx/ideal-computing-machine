@@ -3,7 +3,7 @@ export default {
   cancel: 'Cancelar',
   date: {
     formats: {
-      allDigits: '%d/%m/%Y',
+      allDigits: '%d/%m/%Y'
     }
   },
   save: 'Salvar'

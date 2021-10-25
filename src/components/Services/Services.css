@@ -31,7 +31,7 @@
   content: '';
 }
 
-.services-included li[data-service-selected="true"]::before {
+.services-included li[data-service-selected='true']::before {
   background-color: var(--primary-color);
   border-color: transparent;
 }
@@ -49,7 +49,7 @@
   border-top: var(--default-border);
 }
 
-[data-service-selected="true"] .services-included__price,
+[data-service-selected='true'] .services-included__price,
 .services-included__total-price {
   color: var(--primary-color);
 }

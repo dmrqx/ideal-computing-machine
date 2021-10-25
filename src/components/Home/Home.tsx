@@ -1,5 +1,8 @@
-import { SetStateAction } from 'react'
+import { SetStateAction, useMemo } from 'react'
+import { useQuery } from '@apollo/client'
 
+import { getAuthedYukerInfo } from '../../api/queries'
+import { formatCurrency } from '../../locale/formatters'
 import './Home.css'
 
 type Props = {
@@ -7,38 +10,83 @@ type Props = {
 }
 
 export default function Home ({ onShowServicesList }: Props) {
+  const { data, error, loading } = useQuery(getAuthedYukerInfo)
+
+  const {
+    firstName,
+    apartment: { image, name: street, number, price, room, subwayStation }
+  } = useMemo(() => {
+    if (data?.yuker) {
+      const { apartment } = data.yuker
+      const { firstName } = data.yuker.user
+
+      return {
+        apartment,
+        firstName
+      }
+    }
+
+    return {
+      firstName: '',
+      apartment: {}
+    }
+  }, [data])
+
+  const apartmentPhoto = useMemo(() => {
+    return (
+      <div className='card__image'>
+        {!!image && <img src={image} alt='' aria-hidden='true' />}
+      </div>
+    )
+  }, [image])
+
+  const formattedPrice = useMemo(
+    () => formatCurrency({ amount: price, currency: 'BRL', locale: 'pt-br' }),
+    [price]
+  )
+
+  if (error || loading) return null
+
   return (
     <>
-      <h1 className="typography--page-title decorated-title">Bem vindo, Bernardo</h1>
+      <h1 className='typography--page-title decorated-title'>
+        Bem vindo, {firstName}
+      </h1>
 
-      <section className="yuker-home">
-        <h2 className="typography--section-dialogue">Atualmente você está morando em:</h2>
+      <section className='yuker-home'>
+        <h2 className='typography--section-dialogue'>
+          Atualmente você está morando em:
+        </h2>
 
-        <div className="card">
-          <div className="card__image">
-            <img src="https://source.unsplash.com/3wylDrjxH-E" alt="" aria-hidden="true" />
-          </div>
+        <div className='card'>
+          {apartmentPhoto}
 
-          <div className="card__content">
-            <div className="home-info">
-              <div className="home-info__location">
-                <b>Maceió 41</b>
-                <span>Quarto A</span>
+          <div className='card__content'>
+            <div className='home-info'>
+              <div className='home-info__location'>
+                <b>{`${street} ${number}`}</b>
+                <span>Quarto {room}</span>
               </div>
-              <div className="home-info__amenities">
+              <div className='home-info__amenities'>
                 <ul>
-                  <li data-amenity="subway">
-                    <span className="icon circle"></span>Paulista <span className="body-text--dim">40m</span>
+                  <li data-amenity='subway'>
+                    <span className='icon circle'></span>
+                    {subwayStation.name}{' '}
+                    <span className='body-text--dim'>
+                      {subwayStation.distance}
+                    </span>
                   </li>
                 </ul>
               </div>
-              <div className="home-info__price">
-                <b>R$ 2.500</b>
+              <div className='home-info__price'>
+                <b>{formattedPrice}</b>
               </div>
             </div>
           </div>
         </div>
-        <span className="cta pill" onClick={onShowServicesList}>Contratar Serviços</span>
+        <span className='cta pill' onClick={onShowServicesList}>
+          Contratar Serviços
+        </span>
       </section>
     </>
   )

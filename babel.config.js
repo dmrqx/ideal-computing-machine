@@ -10,8 +10,11 @@ export default function babelConfig ({ cache, env }) {
           modules: env('test') ? 'commonjs' : 'auto',
           useBuiltIns: 'usage',
           corejs: {
-            version: 3,
+            version: '3.8',
             proposals: true
+          },
+          targets: {
+            node: 'current'
           }
         }
       ],
@@ -28,7 +31,7 @@ export default function babelConfig ({ cache, env }) {
         'babel-plugin-module-resolver',
         {
           root: ['./src/**'],
-          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
         }
       ]
     ]

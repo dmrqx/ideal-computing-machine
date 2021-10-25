@@ -1,8 +1,6 @@
-import { dirname, resolve } from 'path'
-import { fileURLToPath } from 'url'
+import { resolve } from 'path'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const rootDir = resolve(__dirname)
+const rootDir = resolve('.')
 const srcDir = resolve(rootDir, 'src')
 
 export default {
@@ -36,6 +34,7 @@ export default {
       },
       rootDir: srcDir,
       testMatch: ['<rootDir>/**/*.spec.js'],
+      testEnvironment: 'jsdom',
       setupFilesAfterEnv: [
         '@testing-library/jest-dom/extend-expect',
         resolve(rootDir, 'jest.setup.js')

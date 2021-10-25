@@ -21,6 +21,11 @@ export default function webpackConfig (_env = {}) {
     module: {
       rules: [
         {
+          test: /\.js$/i,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        },
+        {
           test: /\.tsx?$/i,
           exclude: /node_modules/,
           loader: 'ts-loader'
@@ -64,7 +69,7 @@ export default function webpackConfig (_env = {}) {
         }
       },
       static: {
-        directory: join(rootDir, 'static'),
+        directory: join(rootDir, 'public')
       }
     },
     devtool: 'cheap-source-map',

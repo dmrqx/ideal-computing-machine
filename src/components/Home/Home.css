@@ -22,7 +22,7 @@
   margin-right: 1rem;
 }
 
-[data-amenity="subway"] .icon {
+[data-amenity='subway'] .icon {
   --background-color: var(--accent-color);
   --content: 'M';
 
